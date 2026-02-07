@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     title: "PurrfectSnap | The Aurora Experience",
     description: "A fork of Snapenhance made to meow your Snapchat experience.",
     icons: {
-        icon: "/icon.jpg",
-        shortcut: "/icon.jpg",
-        apple: "/icon.jpg",
+        icon: "/icon.png",
+        shortcut: "/icon.png",
+        apple: "/icon.png",
     },
 };
 
