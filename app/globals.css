@@ -1,0 +1,36 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --aurora-cyan: #00f2ea;
+    --aurora-pink: #ff0055;
+    --aurora-purple: #7000ff;
+    --bg-dark: #050510;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-dark);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050510;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
