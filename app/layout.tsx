@@ -5,7 +5,7 @@ import "./globals.css";
 const outfit = Outfit({ subsets: ["latin"], display: 'swap' });
 
 export const metadata: Metadata = {
-    title: "PurrfectSnap | The Aurora Experience",
+    title: "PurrfectSnap | Redefine Snapchat",
     description: "A fork of Snapenhance made to meow your Snapchat experience.",
     icons: {
         icon: "/icon.png",
