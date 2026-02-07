@@ -16,12 +16,11 @@ export const Hero = () => {
                             <span className="block drop-shadow-[0_0_15px_rgba(0,242,234,0.3)]">Purrfect</span>
                             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#00f2ea] via-[#ff0055] to-[#00f2ea] bg-[length:200%_auto] animate-text-flow drop-shadow-[0_0_15px_rgba(255,0,85,0.4)] pb-3 pr-2">
                                 Snap
-                                <span className="absolute -top-2 -right-4 md:-top-3 md:-right-6 w-2 h-2 md:w-3 md:h-3 rounded-full bg-white animate-pulse shadow-[0_0_10px_#fff]"></span>
                             </span>
                         </h1>
                     </div>
                     <p className="text-base md:text-xl text-gray-400 max-w-xl leading-relaxed mx-auto md:mx-0 px-2 md:px-0">
-                        A fork of Snapenhance made to <span className="text-aurora-pink italic font-semibold">meow</span> your experience. AMOLED aesthetics and powerful modern features.
+                        A fork of Snapenhance made to <span className="text-aurora-pink italic font-semibold">meow</span> your experience.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start pt-2 items-center w-full md:w-auto">
                         <DownloadButton />
