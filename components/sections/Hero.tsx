@@ -36,9 +36,11 @@ export const Hero = () => {
                         rel="noreferrer"
                         className="inline-flex justify-center md:justify-start"
                     >
-                        <img
+                        <Image
                             src="https://img.shields.io/github/downloads/particle-box/PurrfectSnap/total?style=for-the-badge&color=f5bde6&labelColor=1e1e2e"
                             alt="Total downloads"
+                            width={240}
+                            height={28}
                             className="h-7 w-auto"
                         />
                     </a>

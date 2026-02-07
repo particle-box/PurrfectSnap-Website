@@ -9,7 +9,7 @@ export const Comparison = () => {
                     <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
                         Stock vs <span className="text-aurora-cyan">Purrfect</span>
                     </h2>
-                    <p className="text-gray-400">See what you've been missing.</p>
+                    <p className="text-gray-400">See what you&apos;ve been missing.</p>
                 </div>
 
                 <div className="relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
