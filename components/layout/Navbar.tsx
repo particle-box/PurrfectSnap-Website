@@ -11,7 +11,7 @@ export const Navbar = () => {
                         alt="PurrfectSnap logo"
                         width={24}
                         height={24}
-                        className="rounded-full"
+                        className="rounded-full overflow-hidden object-cover"
                     />
                     <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-cyan to-white">PurrfectSnap</span>
                 </span>
