@@ -36,11 +36,10 @@ export const Hero = () => {
                         rel="noreferrer"
                         className="inline-flex justify-center md:justify-start"
                     >
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                             src="https://img.shields.io/github/downloads/particle-box/PurrfectSnap/total?style=for-the-badge&color=f5bde6&labelColor=1e1e2e"
                             alt="Total downloads"
-                            width={240}
-                            height={28}
                             className="h-7 w-auto"
                         />
                     </a>
@@ -55,7 +54,7 @@ export const Hero = () => {
                         <div className="absolute inset-0 bg-gradient-to-tr from-aurora-cyan to-aurora-pink blur-[50px] md:blur-[80px] opacity-50 rounded-full transform scale-90" />
                         <div className="relative rounded-[2rem] md:rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-sm p-2 md:p-3 shadow-2xl ring-1 ring-white/10">
                             <div className="relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-black aspect-square">
-                                <Image src="/assets/ghost-logo.jpg" alt="PurrfectSnap Ghost Mascot" fill className="object-cover" priority sizes="(max-width: 768px) 80vw, 50vw" />
+                                <Image src="/assets/purrfectsnap-logo.jpg" alt="PurrfectSnap logo" fill className="object-cover" priority sizes="(max-width: 768px) 80vw, 50vw" />
                             </div>
                         </div>
                     </div>
