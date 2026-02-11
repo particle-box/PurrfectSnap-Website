@@ -25,51 +25,35 @@ export default function SelfBuildPage() {
                     <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
                         Build PurrfectSnap From Source
                     </h1>
-                    <p className="text-sm md:text-base text-gray-300 max-w-3xl">
-                        For most users, building is just one command depending on target ABI. The project handles setup logic during the build.
-                    </p>
 
                     <div className="mt-8 space-y-6">
                         <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
-                            <h2 className="text-xl md:text-2xl font-bold mb-3">1. Clone</h2>
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">1. Requirements</h2>
+                            <ul className="list-disc pl-5 text-sm md:text-base text-gray-300 space-y-2">
+                                <li>JDK 21</li>
+                                <li>Android SDK 36 + Build Tools 36.0.0</li>
+                                <li>Android NDK 28.2.13676358</li>
+                                <li>Rust toolchain (rustup)</li>
+                                <li>WSL2 on Windows (recommended)</li>
+                            </ul>
+                        </article>
+
+                        <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">2. Clone</h2>
                             <pre className="rounded-2xl bg-black/40 border border-white/10 p-4 overflow-x-auto text-xs md:text-sm text-gray-200"><code>{`git clone https://github.com/particle-box/PurrfectSnap.git
 cd PurrfectSnap`}</code></pre>
                         </article>
 
                         <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
-                            <h2 className="text-xl md:text-2xl font-bold mb-3">2. Build Release APK</h2>
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">3. Setup Signing Certificate (Required)</h2>
                             <p className="text-sm md:text-base text-gray-300 mb-3">
-                                Pick one command based on the APK you want:
-                            </p>
-                            <pre className="rounded-2xl bg-black/40 border border-white/10 p-4 overflow-x-auto text-xs md:text-sm text-gray-200"><code>{`# arm64-v8a APK
-./gradlew assembleArmv8Release
-
-# armeabi-v7a APK
-./gradlew assembleArmv7Release`}</code></pre>
-                            <p className="text-sm md:text-base text-gray-300 mb-3">
-                                The project’s build scripts and Gradle config handle most setup automatically during build.
-                            </p>
-                        </article>
-
-                        <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
-                            <h2 className="text-xl md:text-2xl font-bold mb-3">3. Output Location</h2>
-                            <ul className="list-disc pl-5 text-sm md:text-base text-gray-300 space-y-2">
-                                <li><code>app/build/outputs/apk/armv8/release/</code> for arm64 builds.</li>
-                                <li><code>app/build/outputs/apk/armv7/release/</code> for armv7 builds.</li>
-                            </ul>
-                        </article>
-
-                        <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
-                            <h2 className="text-xl md:text-2xl font-bold mb-3">4. Signing Notes</h2>
-                            <p className="text-sm md:text-base text-gray-300 mb-3">
-                                Release signing can use a keystore at <code>~/.android/purrfectsnap-release.keystore</code> with:
+                                Release signing expects a keystore at <code>~/.android/purrfectsnap-release.keystore</code> and:
                                 <code className="ml-1">PS_RELEASE_STORE_PASSWORD</code>,
                                 <code className="ml-1">PS_RELEASE_KEY_ALIAS</code>,
                                 <code className="ml-1">PS_RELEASE_KEY_PASSWORD</code>.
                             </p>
                             <pre className="rounded-2xl bg-black/40 border border-white/10 p-4 overflow-x-auto text-xs md:text-sm text-gray-200"><code>{`mkdir -p ~/.android
 
-# Optional: create keystore
 keytool -genkeypair \
   -v \
   -keystore ~/.android/purrfectsnap-release.keystore \
@@ -78,14 +62,33 @@ keytool -genkeypair \
   -keysize 4096 \
   -validity 3650
 
-# Export signing vars for current shell
 export PS_RELEASE_STORE_PASSWORD='your_store_password'
 export PS_RELEASE_KEY_ALIAS='purrfectsnap'
 export PS_RELEASE_KEY_PASSWORD='your_key_password'`}</code></pre>
                         </article>
 
                         <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
-                            <h2 className="text-xl md:text-2xl font-bold mb-3">5. If Build Fails</h2>
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">4. Build Release APK</h2>
+                            <p className="text-sm md:text-base text-gray-300 mb-3">
+                                Pick one command based on the APK you want:
+                            </p>
+                            <pre className="rounded-2xl bg-black/40 border border-white/10 p-4 overflow-x-auto text-xs md:text-sm text-gray-200"><code>{`# arm64-v8a APK
+./gradlew assembleArmv8Release
+
+# armeabi-v7a APK
+./gradlew assembleArmv7Release`}</code></pre>
+                        </article>
+
+                        <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">5. Output Location</h2>
+                            <ul className="list-disc pl-5 text-sm md:text-base text-gray-300 space-y-2">
+                                <li><code>app/build/outputs/apk/armv8/release/</code> for arm64 builds.</li>
+                                <li><code>app/build/outputs/apk/armv7/release/</code> for armv7 builds.</li>
+                            </ul>
+                        </article>
+
+                        <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">6. If Build Fails</h2>
                             <ul className="list-disc pl-5 text-sm md:text-base text-gray-300 space-y-2">
                                 <li>Use WSL2 if building on Windows.</li>
                                 <li>Install JDK 21 if missing.</li>
@@ -95,7 +98,7 @@ export PS_RELEASE_KEY_PASSWORD='your_key_password'`}</code></pre>
                         </article>
 
                         <article className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
-                            <h2 className="text-xl md:text-2xl font-bold mb-3">6. Certificate Hash (Advanced)</h2>
+                            <h2 className="text-xl md:text-2xl font-bold mb-3">7. Certificate Hash (Advanced)</h2>
                             <p className="text-sm md:text-base text-gray-300 mb-3">
                                 If you hit integrity/signature mismatch, set <code>EXPECTED_CERT_SHA256</code> to your signing certificate hash.
                             </p>
@@ -104,7 +107,6 @@ export PS_RELEASE_KEY_PASSWORD='your_key_password'`}</code></pre>
   -alias purrfectsnap \
   -storepass "$PS_RELEASE_STORE_PASSWORD" | grep "SHA256:"
 
-# Example one-off build override:
 ./gradlew assembleArmv8Release -PEXPECTED_CERT_SHA256=<your_sha256_no_colons>`}</code></pre>
                         </article>
                     </div>
