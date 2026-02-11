@@ -23,6 +23,7 @@ export const Comparison = () => {
                     {/* Rows */}
                     {[
                         { name: "Save Snaps Secretly", stock: false, mod: true },
+                        { name: "View Deleted Messages and Snaps", stock: false, mod: true },
                         { name: "View Stories Anonymously", stock: false, mod: true },
                         { name: "Disable 'Typing...' Indicator", stock: false, mod: true },
                         { name: "Unlimited Snap Viewing", stock: false, mod: true },
