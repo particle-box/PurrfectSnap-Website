@@ -4,7 +4,7 @@
         { title: "Revamped Theming", icon: "🎨" },
         { title: "Spoof Location", icon: "📍" },
         { title: "Friend Tracker", icon: "🕵️" },
-        { title: "Easy Config", icon: "⚙️" },
+        { title: "Spoofing Tools", icon: "⚙️" },
         { title: "Camera Enhancements", icon: "📸" }
     ];
     const pills = ["Haptic Feedback", "Auto-Updater", "Quick Actions", "Restored Icons", "Auto-Reply", "Auto-Snap Sender", "Merge Overlays", "Force Formats", "Profile Pic Downloader", "Session Events", "Device Spoof", "Message Logger", "App Passcode", "E2E Encryption", "Prevent Logout", "Disable Camera"];
