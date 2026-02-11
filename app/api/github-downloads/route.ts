@@ -2,28 +2,40 @@ import { NextResponse } from "next/server";
 
 const OWNER = "particle-box";
 const REPO = "PurrfectSnap";
-const GITHUB_API = `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=100`;
+const GITHUB_API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}/releases`;
+const PER_PAGE = 100;
+const MAX_PAGES = 20;
 
 export async function GET() {
     try {
-        const response = await fetch(GITHUB_API, {
-            headers: {
-                Accept: "application/vnd.github+json",
-                "User-Agent": "PurrfectSnap-Website",
-            },
-            next: { revalidate: 600 },
-        });
+        const headers = {
+            Accept: "application/vnd.github+json",
+            "User-Agent": "PurrfectSnap-Website",
+        };
+        const releases: Array<{ assets?: Array<{ download_count?: number }> }> = [];
 
-        if (!response.ok) {
-            return NextResponse.json(
-                { error: "Failed to fetch release stats from GitHub." },
-                { status: response.status }
-            );
+        for (let page = 1; page <= MAX_PAGES; page += 1) {
+            const response = await fetch(`${GITHUB_API_BASE}?per_page=${PER_PAGE}&page=${page}`, {
+                headers,
+                next: { revalidate: 600 },
+            });
+
+            if (!response.ok) {
+                return NextResponse.json(
+                    { error: "Failed to fetch release stats from GitHub." },
+                    { status: response.status }
+                );
+            }
+
+            const currentPage = (await response.json()) as Array<{
+                assets?: Array<{ download_count?: number }>;
+            }>;
+            releases.push(...currentPage);
+
+            if (currentPage.length < PER_PAGE) {
+                break;
+            }
         }
-
-        const releases = (await response.json()) as Array<{
-            assets?: Array<{ download_count?: number }>;
-        }>;
 
         const totalDownloads = releases.reduce((releaseTotal, release) => {
             const assetTotal =
