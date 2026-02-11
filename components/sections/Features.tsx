@@ -1,11 +1,11 @@
 ﻿export const Features = () => {
     const features = [
-        { title: "Revamped Theming", desc: "Includes a gorgeous, battery-saving AMOLED theme.", icon: "🎨" },
-        { title: "Dynamic Tabs", desc: "Total control over navigation. Create your perfect layout.", icon: "⚡" },
-        { title: "Friend Tracker", desc: "Import and export your tracked friends list easily.", icon: "🕵️" },
-        { title: "Easy Config", desc: "New interface for importing/exporting settings.", icon: "⚙️" },
-        { title: "Media Downloader", desc: "Auto download, prevent self-download, force formats.", icon: "📥" },
-        { title: "Modern Internals", desc: "Updated dependencies for maximum performance.", icon: "🚀" }
+        { title: "Revamped Theming", icon: "🎨" },
+        { title: "Dynamic Tabs", icon: "⚡" },
+        { title: "Friend Tracker", icon: "🕵️" },
+        { title: "Easy Config", icon: "⚙️" },
+        { title: "Media Downloader", icon: "📥" },
+        { title: "Modern Internals", icon: "🚀" }
     ];
     const pills = ["Haptic Feedback", "Auto-Updater", "Quick Actions", "Restored Icons", "Auto-Reply", "Auto-Snap Sender", "Merge Overlays", "Force Formats", "Profile Pic Downloader", "Session Events", "Device Spoof", "Message Logger", "App Passcode", "E2E Encryption", "Prevent Logout", "Disable Camera"];
 
@@ -20,12 +20,11 @@
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-16">
                     {features.map((f, i) => (
-                        <div key={i} className="group p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-aurora-cyan/40 hover:bg-white/10 transition-all duration-300 active:scale-98 backdrop-blur-sm">
+                        <div key={i} className="group p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-aurora-cyan/40 hover:bg-white/10 transition-all duration-300 active:scale-98 backdrop-blur-sm min-h-[144px] flex flex-col justify-center">
                             <div className="text-3xl md:text-4xl mb-4 bg-white/5 w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                                 {f.icon}
                             </div>
-                            <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-aurora-cyan transition-colors">{f.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                            <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-aurora-cyan transition-colors">{f.title}</h3>
                         </div>
                     ))}
                 </div>

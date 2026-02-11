@@ -12,7 +12,11 @@ export async function GET() {
             Accept: "application/vnd.github+json",
             "User-Agent": "PurrfectSnap-Website",
         };
-        const releases: Array<{ assets?: Array<{ download_count?: number }> }> = [];
+        const releases: Array<{
+            name?: string;
+            tag_name?: string;
+            assets?: Array<{ download_count?: number }>;
+        }> = [];
 
         for (let page = 1; page <= MAX_PAGES; page += 1) {
             const response = await fetch(`${GITHUB_API_BASE}?per_page=${PER_PAGE}&page=${page}`, {
@@ -28,6 +32,8 @@ export async function GET() {
             }
 
             const currentPage = (await response.json()) as Array<{
+                name?: string;
+                tag_name?: string;
                 assets?: Array<{ download_count?: number }>;
             }>;
             releases.push(...currentPage);
@@ -42,12 +48,14 @@ export async function GET() {
                 release.assets?.reduce((assetSum, asset) => assetSum + (asset.download_count ?? 0), 0) ?? 0;
             return releaseTotal + assetTotal;
         }, 0);
+        const latestReleaseTitle = releases[0]?.name || releases[0]?.tag_name || "Latest Release";
 
         return NextResponse.json(
             {
                 totalDownloads,
                 releaseCount: releases.length,
                 source: `${OWNER}/${REPO}`,
+                latestReleaseTitle,
             },
             {
                 headers: {

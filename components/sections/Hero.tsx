@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import { DownloadButton } from "../ui/DownloadButton";
 import { DownloadStats } from "../ui/DownloadStats";
+import { LatestReleaseTitle } from "../ui/LatestReleaseTitle";
 import { Github } from "lucide-react";
 
 export const Hero = () => {
@@ -36,7 +37,7 @@ export const Hero = () => {
                     <div className="pt-2 flex items-center justify-center md:justify-start gap-4 text-xs md:text-sm text-gray-500">
                         <a href="https://t.me/purrfectsnap_official" target="_blank" className="hover:text-aurora-cyan transition-colors underline decoration-dotted p-2">Join Telegram</a>
                         <span>•</span>
-                        <span>v1.0.0 Stable</span>
+                        <LatestReleaseTitle />
                     </div>
                 </div>
                 <div className="flex-1 relative w-[280px] sm:w-[400px] md:w-full md:max-w-[600px] perspective-1000 z-10">
