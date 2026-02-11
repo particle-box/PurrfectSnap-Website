@@ -1,12 +1,18 @@
 <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tech Karan">
   <defs>
-    <linearGradient id="tkGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#35b8ff"/>
-      <stop offset="100%" stop-color="#1f73ff"/>
+    <linearGradient id="tkGrad" x1="36" y1="38" x2="128" y2="126" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22c7ed"/>
+      <stop offset="100%" stop-color="#2f67ff"/>
     </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#5eb9ff" flood-opacity="0.24"/>
+    </filter>
   </defs>
-  <rect x="2" y="2" width="156" height="156" rx="78" fill="#f7fbff"/>
-  <circle cx="80" cy="80" r="77" fill="none" stroke="url(#tkGradient)" stroke-width="3"/>
-  <path d="M44 54H95V63H77V109H66V63H44V54Z" fill="url(#tkGradient)"/>
-  <path d="M92 54H103V77L123 54H136L113 81L138 109H124L105 89L103 91V109H92V54Z" fill="url(#tkGradient)"/>
+  <rect width="160" height="160" fill="#000000"/>
+  <circle cx="80" cy="80" r="73.5" fill="#f2f4f6" stroke="#f8fbff" stroke-width="7"/>
+  <circle cx="80" cy="80" r="61.5" fill="none" stroke="#2287f6" stroke-width="3.5"/>
+  <g filter="url(#soft)">
+    <path d="M48 60.5H102.5C102.5 69 95.6 75.8 87.2 75.8H72.8V118C67.6 122.5 65.4 123.5 65.4 123.5V75.8H48V60.5Z" fill="url(#tkGrad)"/>
+    <path d="M94.4 60.5H111.8L94.8 84L121.3 114.7C116.5 117.3 110.4 117.2 105.6 114.4L77.9 98.2L94.4 79V60.5Z" fill="url(#tkGrad)"/>
+  </g>
 </svg>

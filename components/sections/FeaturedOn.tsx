@@ -13,6 +13,16 @@ const featuredMentions = [
         logo: "/assets/featured/seedoss.jpg",
     },
     {
+        name: "Tech Karan",
+        href: "https://youtu.be/QG_v2_HQoJI?si=KnhVVQhwoFqvoUnC",
+        logo: "/assets/featured/tech-karan.svg",
+    },
+    {
+        name: "Schrodingerspet",
+        href: "https://t.me/SchrodingerspetOfficial/332",
+        logo: "/assets/featured/schrodingerspet.svg",
+    },
+    {
         name: "ZGTechs",
         href: "https://t.me/ZGTechs/796",
         logo: "/assets/featured/zgtechs.jpg",
@@ -31,11 +41,6 @@ const featuredMentions = [
         name: "GitDroid",
         href: "https://t.me/gitdroid/1786",
         logo: "/assets/featured/gitdroid.jpg",
-    },
-    {
-        name: "Tech Karan",
-        href: "https://youtu.be/QG_v2_HQoJI?si=KnhVVQhwoFqvoUnC",
-        logo: "/assets/featured/tech-karan.svg",
     },
 ];
 
