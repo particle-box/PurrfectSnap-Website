@@ -51,19 +51,19 @@ export const GetSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 items-start">
                     {getOptions.map((item) => (
                         <a
                             key={item.name}
                             href={item.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 hover:border-aurora-cyan/40 transition-all duration-300 backdrop-blur-md p-5 md:p-6"
+                            className="group relative self-start rounded-3xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 hover:border-aurora-cyan/40 transition-all duration-300 backdrop-blur-md p-4 md:p-5"
                         >
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-tr from-aurora-cyan/10 via-transparent to-aurora-pink/10" />
 
-                            <div className="relative flex items-start justify-between gap-4 mb-6">
-                                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-black/20 border border-white/15 overflow-hidden flex items-center justify-center">
+                            <div className="relative flex items-start justify-between gap-3 mb-3">
+                                <div className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl bg-black/20 border border-white/15 overflow-hidden flex items-center justify-center">
                                     {item.logoType === "github" ? (
                                         <Github className="w-10 h-10 text-white" />
                                     ) : (
@@ -71,7 +71,7 @@ export const GetSection = () => {
                                     )}
                                 </div>
 
-                                <div className="text-right">
+                                <div className="text-right pt-1">
                                     <p className="text-xs md:text-sm text-gray-400">{item.note}</p>
                                     <h3 className="text-lg md:text-xl font-bold text-white">{item.name}</h3>
                                 </div>
