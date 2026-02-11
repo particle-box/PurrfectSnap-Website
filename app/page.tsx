@@ -32,7 +32,10 @@ export default function Home() {
 
                 <footer className="py-8 md:py-12 border-t border-white/5 bg-black/20 backdrop-blur-xl">
                     <div className="container mx-auto px-6 text-center text-gray-500 text-xs md:text-sm">
-                        <p className="mb-4">© 2025 PurrfectSnap Project.</p>
+                        <p className="mb-2">© 2026 PurrfectSnap.</p>
+                        <p className="mb-4 opacity-80">
+                            Licensed under GPL 3.0 and Apache 2.0.
+                        </p>
                         <p className="opacity-60 max-w-xs mx-auto">
                             Not affiliated with, endorsed by, or sponsored by Snapchat Inc.
                         </p>
