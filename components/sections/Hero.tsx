@@ -22,7 +22,10 @@ export const Hero = () => {
                         </h1>
                     </div>
                     <p className="text-base md:text-xl text-gray-400 max-w-xl leading-relaxed mx-auto md:mx-0 px-2 md:px-0">
-                        A fork of SnapEnhance made to <span className="text-aurora-pink italic font-semibold">meow</span> your Snapchat experience.
+                        A feature-rich Snapchat mod meant to <span className="text-aurora-pink italic font-semibold">meow</span> your Snapchat experience.
+                    </p>
+                    <p className="text-xs md:text-sm text-gray-500 max-w-xl mx-auto md:mx-0 px-2 md:px-0 leading-relaxed">
+                        PurrfectSnap is a fork of SnapEnhance. We are grateful to the original project as without it, this mod wouldn&apos;t exist.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start pt-2 items-center w-full md:w-auto">
                         <DownloadButton />
