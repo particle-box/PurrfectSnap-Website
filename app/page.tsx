@@ -1,5 +1,6 @@
 ﻿import { Navbar } from "../components/layout/Navbar";
 import { Hero } from "../components/sections/Hero";
+import { GetSection } from "../components/sections/GetSection";
 import { Features } from "../components/sections/Features";
 import { FeaturedOn } from "../components/sections/FeaturedOn";
 import { Comparison } from "../components/sections/Comparison";
@@ -21,6 +22,7 @@ export default function Home() {
             {/* SCROLLABLE SECTIONS */}
             <div className="relative z-10">
                 <Hero />
+                <GetSection />
                 <Features />
                 <FeaturedOn />
 
