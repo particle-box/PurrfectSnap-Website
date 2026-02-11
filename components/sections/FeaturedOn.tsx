@@ -20,7 +20,7 @@ const featuredMentions = [
     {
         name: "Schrodingerspet",
         href: "https://t.me/SchrodingerspetOfficial/332",
-        logo: "/assets/featured/schrodingerspet.svg",
+        logo: "/assets/featured/6197073836428607409.jpg",
     },
     {
         name: "ZGTechs",
