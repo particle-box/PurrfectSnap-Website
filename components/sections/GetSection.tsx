@@ -7,7 +7,6 @@ const getOptions = [
         href: "https://github.com/particle-box/PurrfectSnap/releases",
         logoType: "github" as const,
         button: "Get on GitHub",
-        note: "Official releases",
     },
     {
         name: "Xposed Repo",
@@ -15,7 +14,6 @@ const getOptions = [
         logoType: "image" as const,
         logo: "/assets/get/xposed-repo.jpeg",
         button: "Get on Xposed Repo",
-        note: "Module listing",
     },
     {
         name: "Orion Store",
@@ -23,7 +21,6 @@ const getOptions = [
         logoType: "image" as const,
         logo: "/assets/get/orion-store.png",
         button: "Get on Orion Store",
-        note: "Community app store",
     },
     {
         name: "GitHub Store",
@@ -31,7 +28,6 @@ const getOptions = [
         logoType: "image" as const,
         logo: "/assets/get/github-store.png",
         button: "Get on GitHub Store",
-        note: "Alternative discovery",
     },
 ];
 
@@ -51,37 +47,24 @@ export const GetSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 items-start">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 place-items-center">
                     {getOptions.map((item) => (
-                        <a
-                            key={item.name}
-                            href={item.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="group relative self-start rounded-3xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 hover:border-aurora-cyan/40 transition-all duration-300 backdrop-blur-md p-4 md:p-5"
-                        >
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-tr from-aurora-cyan/10 via-transparent to-aurora-pink/10" />
-
-                            <div className="relative flex items-start justify-between gap-3 mb-3">
-                                <div className="w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl bg-black/20 border border-white/15 overflow-hidden flex items-center justify-center">
+                        <div key={item.name} className="w-[150px] md:w-[170px] text-center">
+                            <a href={item.href} target="_blank" rel="noreferrer" className="group block">
+                                <div className="mx-auto w-[96px] h-[96px] md:w-[112px] md:h-[112px] rounded-3xl bg-white/5 border border-white/10 overflow-hidden flex items-center justify-center transition-all duration-300 group-hover:border-aurora-cyan/50 group-hover:bg-white/10">
                                     {item.logoType === "github" ? (
-                                        <Github className="w-10 h-10 text-white" />
+                                        <Github className="w-14 h-14 text-white" />
                                     ) : (
-                                        <Image src={item.logo} alt={`${item.name} logo`} width={80} height={80} className="w-full h-full object-cover" />
+                                        <Image src={item.logo} alt={`${item.name} logo`} width={112} height={112} className="w-full h-full object-cover" />
                                     )}
                                 </div>
+                            </a>
 
-                                <div className="text-right pt-1">
-                                    <p className="text-xs md:text-sm text-gray-400">{item.note}</p>
-                                    <h3 className="text-lg md:text-xl font-bold text-white">{item.name}</h3>
-                                </div>
-                            </div>
-
-                            <div className="relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold bg-aurora-pink/15 border border-aurora-pink/40 text-white group-hover:bg-aurora-pink/25 group-hover:border-aurora-pink/60 transition-all">
-                                <span>{item.button}</span>
-                                <ExternalLink className="w-4 h-4" />
-                            </div>
-                        </a>
+                            <a href={item.href} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center justify-center gap-1.5 text-xs md:text-sm font-semibold text-gray-300 hover:text-aurora-cyan transition-colors">
+                                {item.button}
+                                <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                        </div>
                     ))}
                 </div>
             </div>
