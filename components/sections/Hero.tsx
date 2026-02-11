@@ -1,5 +1,6 @@
 ﻿import Image from "next/image";
 import { DownloadButton } from "../ui/DownloadButton";
+import { DownloadStats } from "../ui/DownloadStats";
 import { Github } from "lucide-react";
 
 export const Hero = () => {
@@ -29,19 +30,9 @@ export const Hero = () => {
                             <span>Source Code</span>
                         </a>
                     </div>
-                    <a
-                        href="https://github.com/particle-box/PurrfectSnap/releases"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex justify-center md:justify-start"
-                    >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src="https://img.shields.io/github/downloads/particle-box/PurrfectSnap/total?style=for-the-badge&color=f5bde6&labelColor=1e1e2e"
-                            alt="Total downloads"
-                            className="h-7 w-auto"
-                        />
-                    </a>
+                    <div className="flex justify-center md:justify-start">
+                        <DownloadStats />
+                    </div>
                     <div className="pt-2 flex items-center justify-center md:justify-start gap-4 text-xs md:text-sm text-gray-500">
                         <a href="https://t.me/purrfectsnap_chat" target="_blank" className="hover:text-aurora-cyan transition-colors underline decoration-dotted p-2">Join Telegram</a>
                         <span>•</span>
