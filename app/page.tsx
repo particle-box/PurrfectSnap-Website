@@ -1,6 +1,7 @@
 ﻿import { Navbar } from "../components/layout/Navbar";
 import { Hero } from "../components/sections/Hero";
 import { Features } from "../components/sections/Features";
+import { FeaturedOn } from "../components/sections/FeaturedOn";
 import { Comparison } from "../components/sections/Comparison";
 import { FAQ } from "../components/sections/FAQ";
 
@@ -21,6 +22,7 @@ export default function Home() {
             <div className="relative z-10">
                 <Hero />
                 <Features />
+                <FeaturedOn />
 
                 {/* NEW SECTIONS ADDED HERE */}
                 <Comparison />
