@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Github } from 'lucide-react';
+import { Github, Send } from 'lucide-react';
 
 export const Navbar = () => {
     return (
@@ -19,6 +19,10 @@ export const Navbar = () => {
                 <a href="https://github.com/particle-box/PurrfectSnap" target="_blank" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
                     <Github className="w-4 h-4" />
                     <span className="hidden sm:inline">GitHub</span>
+                </a>
+                <a href="https://t.me/purrfectsnap_official" target="_blank" className="flex items-center gap-2 text-sm text-gray-300 hover:text-aurora-cyan transition-colors">
+                    <Send className="w-4 h-4" />
+                    <span className="hidden sm:inline">Telegram</span>
                 </a>
             </div>
         </nav>

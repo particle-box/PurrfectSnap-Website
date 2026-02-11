@@ -34,7 +34,7 @@ export const Hero = () => {
                         <DownloadStats />
                     </div>
                     <div className="pt-2 flex items-center justify-center md:justify-start gap-4 text-xs md:text-sm text-gray-500">
-                        <a href="https://t.me/purrfectsnap_chat" target="_blank" className="hover:text-aurora-cyan transition-colors underline decoration-dotted p-2">Join Telegram</a>
+                        <a href="https://t.me/purrfectsnap_official" target="_blank" className="hover:text-aurora-cyan transition-colors underline decoration-dotted p-2">Join Telegram</a>
                         <span>•</span>
                         <span>v1.0.0 Stable</span>
                     </div>
